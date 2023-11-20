@@ -24,7 +24,7 @@ var livros: Array<Livro> = [
   },
 ];
 
-class ControleLivro {
+export default class ControleLivro {
   public obterLivros(): Array<Livro> {
     return livros;
   }

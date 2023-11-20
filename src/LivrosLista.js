@@ -1,6 +1,7 @@
-import { ControleLivro } from './ControleLivro.js';
-import { ControleEditora } from './ControleEditora.js';
+import ControleLivro from './control/ControleLivros';
+import ControleEditora from './control/ControleEditora';
 import React from 'react';
+import './App.css';
 
 const controleLivro = new ControleLivro(); 
 const controleEditora = new ControleEditora(); 
@@ -13,7 +14,7 @@ function LinhaLivro(props) {
     <tr>
       <td>
         {props.livro.titulo}
-        <button onClick={() => props.excluir(props.livro.codigo)}>
+        <button type="button" className="btn btn-danger" onClick={() => props.excluir(props.livro.codigo)}>
           Excluir
         </button>
       </td>
@@ -51,10 +52,10 @@ export default function LivroLista() {
   };
 
   return (
-    <main>
-      <h1>Lista de Livros</h1>
-      <table>
-        <thead>
+    <main className="container">
+      <h1>Catálogo de Livros</h1>
+      <table className="table table-hover">
+        <thead className="table-dark">
           <tr>
             <th>Título</th>
             <th>Editora</th>
